@@ -4,16 +4,13 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Question</div>
-                    <div class="card-body">
-
-                        {{$question->body}}
+                    <div class="card-body">                        {{$question->body}}
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary float-right"
                            href="{{ route('question.edit',['id'=> $question->id])}}">
                             Edit Question
-                        </a>
-                        {{ Form::open(['method'  => 'DELETE', 'route' => ['question.destroy', $question->id]])}}
+                        </a> {{ Form::open(['method'  => 'DELETE', 'route' => ['question.destroy', $question->id]])}}
                         <button class="btn btn-danger float-right mr-2" value="submit" type="submit" id="submit">Delete
                         </button>
                         {!! Form::close() !!}
@@ -23,7 +20,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header"><a class="btn btn-primary float-left"
-                                                href="#">
+                                                href="{{ route('answer.create', ['question_id'=> $question->id])}}">
                             Answer Question
                         </a></div>
                     <div class="card-body">
@@ -44,5 +41,5 @@
                 </div>
             </div>
         </div>
-            </div>
+    </div>
 @endsection
