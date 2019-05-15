@@ -22,7 +22,7 @@
                                             </div>
                                             <div class="card-footer">
                                                 <p class="card-text"><a class="btn btn-primary float-right"
-                                                                        href="#">
+                                                                        href="{{ route('questions.show', ['id' => $question->id]) }}">
                                                         View
                                                     </a>
                                                 </p>
