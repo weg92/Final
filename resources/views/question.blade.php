@@ -10,9 +10,13 @@
                     </div>
                     <div class="card-footer">
                         <a class="btn btn-primary float-right"
-                           href="#">
+                           href="{{ route('question.edit',['id'=> $question->id])}}">
                             Edit Question
                         </a>
+                        {{ Form::open(['method'  => 'DELETE', 'route' => ['question.destroy', $question->id]])}}
+                        <button class="btn btn-danger float-right mr-2" value="submit" type="submit" id="submit">Delete
+                        </button>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -35,7 +39,8 @@
                             <div class="card">
                                 <div class="card-body"> No Answers</div>
                             </div>
-                        @endforelse                    </div>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
